@@ -19,19 +19,8 @@ code {
 }
 
 :root {
-  --main-color-header:linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
-  --main-color: rgba(51, 139, 180, .8);
-  --main-color-bg: rgba(51, 139, 180, .2);
+  --main-color-bg: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
   --link-color: rgba(255,255,255, .8);
   --link-color-hover: rgba(255,255,255, 1);
 }
 
-a {
-  color: var(--link-color);
-  text-decoration: none;
-  transition: color .2s ease-in-out;
-}
-
-a:hover {
-  color: var(--link-color-hover);
-}

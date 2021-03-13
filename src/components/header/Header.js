@@ -1,6 +1,7 @@
 import React from "react";
 import { Box } from "@material-ui/core";
 import useStyles from "./styles";
+import clouts from "../../assets/wb_sunny-24px.svg";
 
 const Header = () => {
   const classes = useStyles();
@@ -12,6 +13,7 @@ const Header = () => {
         }}
       >
         Estado del Clima
+        <i src={clouts}></i>
       </h1>
     </Box>
   );
