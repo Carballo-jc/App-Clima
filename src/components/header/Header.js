@@ -1,6 +1,5 @@
 import React from "react";
 import { Box } from "@material-ui/core";
-import { Link } from "react-router-dom";
 import useStyles from "./styles";
 
 const Header = () => {
@@ -12,7 +11,7 @@ const Header = () => {
           color: "rgba(255,255,255,.9)",
         }}
       >
-        <Link to={"/"}>Estado del Clima</Link>
+        Estado del Clima
       </h1>
     </Box>
   );
