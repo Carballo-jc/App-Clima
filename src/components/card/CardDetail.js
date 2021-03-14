@@ -1,32 +1,34 @@
-import React from "react";
+import React, { useContext } from "react";
 import useStyles from "../weatherinfo/styles";
 import { Card, CardContent, Typography } from "@material-ui/core";
 import clouts from "../../assets/images/wb_sunny-24px.svg";
+import { WeatherContext } from "../context/WeatherContext";
 
-const CardDetail = (data) => {
-  console.log(data);
+const CardDetail = () => {
   const classes = useStyles();
-
+  
+  const {data} = useContext(WeatherContext)
+  const {name,main,weather}=data;
   return (
-    <div>
+    <>
       <Card className={classes.root}>
         <CardContent>
           <Typography className={classes.title} gutterBottom>
-            <span>Ciudad:{data.data.name}</span>
+            <span>Ciudad:{name}</span>
             <img src={clouts} className={classes.logo_header} alt="clima" />
           </Typography>
           <Typography variant="h6" component="h3">
-            <span>Temperatura:{data.data.main.temp}°</span>
+            <span>Temperatura:{main.temp}°</span>
           </Typography>
           <Typography className={classes.pos} color="textSecondary">
-            <span>Pronostico:{data.data.weather[0].description}</span>
+            <span>Pronostico:{weather[0].description}</span>
           </Typography>
           <Typography className={classes.pos} color="textSecondary">
-            <span>Humedad:{data.data.main.humidity}</span>
+            <span>Humedad:{main.humidity}</span>
           </Typography>
         </CardContent>
       </Card>
-    </div>
+    </>
   );
 };
 

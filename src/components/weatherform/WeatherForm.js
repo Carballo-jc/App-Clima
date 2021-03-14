@@ -2,10 +2,13 @@ import useForm from "../../hooks/useForm";
 import { getWeather } from "../../service/service";
 import { TextField ,Button, Grid} from "@material-ui/core";
 import useStyles from './styles'
+import { useContext } from "react";
+import { WeatherContext } from "../context/WeatherContext";
 
-const WeatherForm = ({ result }) => {
+const WeatherForm = () => {
   const classes = useStyles();
-  const [formValues, handleInputChange] = useForm({
+  const {resultDay} = useContext(WeatherContext)
+  const [formValues, handleInputChange,reset] = useForm({
     city: "",
     country: "",
   });
@@ -13,6 +16,8 @@ const WeatherForm = ({ result }) => {
   const getdata = (e) => {
     e.preventDefault();
     getWeather(city, country);
+    reset()
+    
   };
    
   return (
@@ -45,7 +50,7 @@ const WeatherForm = ({ result }) => {
         variant="contained"
         color="primary"
         type="submit"
-         onClick={() => result(city, country)}
+         onClick={() => resultDay(city, country)}
         >
         Consultar
       </Button>
