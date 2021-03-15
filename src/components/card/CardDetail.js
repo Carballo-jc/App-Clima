@@ -8,7 +8,7 @@ const CardDetail = () => {
   const classes = useStyles();
   
   const {data} = useContext(WeatherContext)
-  const {name,main,weather}=data;
+  const { name, main, weather, wind } = data;
   return (
     <>
       <Card className={classes.root}>
@@ -25,6 +25,9 @@ const CardDetail = () => {
           </Typography>
           <Typography className={classes.pos} color="textSecondary">
             <span>Humedad:{main.humidity}</span>
+          </Typography>
+          <Typography className={classes.pos} color="textSecondary">
+            <span>Velocidad del Viento:{wind.speed}</span>
           </Typography>
         </CardContent>
       </Card>

@@ -7,7 +7,7 @@ import { WeatherContext } from "../context/WeatherContext";
 
 const WeatherForm = () => {
   const classes = useStyles();
-  const {resultDay} = useContext(WeatherContext)
+  const { resultDay } = useContext(WeatherContext);
   const [formValues, handleInputChange,reset] = useForm({
     city: "",
     country: "",
@@ -21,40 +21,40 @@ const WeatherForm = () => {
   };
    
   return (
-      <form onSubmit={getdata} className={classes.root}>
-        <Grid container>
-          <Grid item xs={12}>
-            <TextField
-              label="Coloque la Ciudad"
-              name="city"
-              type="text"
-              variant="outlined"
-              fullWidth={true}
-              value={city}
-              onChange={handleInputChange}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              label="Coloque el Pais"
-              name="country"
-              type="text"
-              variant="outlined"
-              fullWidth={true}
-              value={country}
-              onChange={handleInputChange}
-            />
-          </Grid>
+    <form onSubmit={getdata} className={classes.root}>
+      <Grid container>
+        <Grid item xs={12}>
+          <TextField
+            label="Coloque la Ciudad"
+            name="city"
+            type="text"
+            variant="outlined"
+            fullWidth={true}
+            value={city}
+            onChange={handleInputChange}
+          />
         </Grid>
+        <Grid item xs={12}>
+          <TextField
+            label="Coloque el Pais"
+            name="country"
+            type="text"
+            variant="outlined"
+            fullWidth={true}
+            value={country}
+            onChange={handleInputChange}
+          />
+        </Grid>
+      </Grid>
       <Button
         variant="contained"
         color="primary"
         type="submit"
-         onClick={() => resultDay(city, country)}
-        >
+        onClick={() => resultDay(city, country)}
+      >
         Consultar
       </Button>
-        </form>
+    </form>
   );
 };
 

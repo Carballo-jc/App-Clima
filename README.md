@@ -1,3 +1,8 @@
+## Detalles de la aplicacion
+
+Esta aplicacion muestra el estado del clima de la ciudad y pais selecionados,
+los datos son obtenidos desde un recurso externo 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

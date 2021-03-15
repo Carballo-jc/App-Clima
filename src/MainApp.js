@@ -1,5 +1,5 @@
-import App from "../App";
-import WeatherProvider from "./context/WeatherContext";
+import App from "./App";
+import WeatherProvider from "./components/context/WeatherContext";
 const MainApp = () => {
   return (
     <WeatherProvider>

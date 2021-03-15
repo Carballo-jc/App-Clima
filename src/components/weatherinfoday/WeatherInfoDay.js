@@ -1,10 +1,11 @@
-import { useContext } from "react";
-import { WeatherContext } from "../context/WeatherContext";
+import WeatherDay from "./WeatherDay";
 
 const WeatherInfoDay = () => {
-  const { day } = useContext(WeatherContext);
-  console.log(day);
-  return <div></div>;
+  return (
+    <div>
+      <WeatherDay />
+    </div>
+  );
 };
 
 export default WeatherInfoDay;
