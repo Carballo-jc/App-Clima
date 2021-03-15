@@ -18,11 +18,11 @@ const useStyles = makeStyles(() => ({
 const WeatherDay = () => {
   const classes = useStyles();
   const { day } = useContext(WeatherContext);
-
+  console.log(day);
   return (
     <div className={classes.content_card}>
       {day
-        ? day.map((item, index) => {
+        ? day.daily.map((item, index) => {
             return <CardDay item={item} key={index} />;
           })
         : null}

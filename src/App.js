@@ -21,11 +21,8 @@ const useStyles = makeStyles(() => ({
 
 const App = () => {
   const classes = useStyles();
-  const {day, data} = useContext(WeatherContext);
-//  console.log(data)
-  //  const lat = day.coord.lat;
-  //  const lon = day.coord.lon;
-  
+  const { data } = useContext(WeatherContext);
+
   return (
     <>
       <Container>
@@ -41,15 +38,12 @@ const App = () => {
                   <Box className={classes.tem_day}>
                     <span>{data.main.temp}° Grados</span>
                   </Box>
-                  
                 )}
               </Grid>
             </Grid>
           </Box>
-        <Grid item md={12} xs={12} >
-           {
-             day &&  <WeatherDay  /> 
-           }
+          <Grid item md={12} xs={12}>
+            {data && <WeatherDay />}
           </Grid>
         </Grid>
       </Container>

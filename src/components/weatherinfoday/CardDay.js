@@ -8,7 +8,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: 150,
     display: "flex",
-    marginRight: 5,
+    margin: 5,
+    maxHeight: 160,
   },
 
   title: {
@@ -18,23 +19,22 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 12,
   },
 }));
+
 const CardDay = ({ item }) => {
   const classes = useStyles();
 
   return (
     <Card className={classes.root}>
       <CardContent>
+        Temperatura:
         <Typography
           className={classes.title}
           color="textSecondary"
           gutterBottom
-        >
-          Temperatura:
-        </Typography>
+        ></Typography>
         <Typography variant="h5" component="h2">
           {item.temp.day}°
         </Typography>
-
         <Typography variant="body2" component="p">
           Humedad:{item.humidity}
         </Typography>

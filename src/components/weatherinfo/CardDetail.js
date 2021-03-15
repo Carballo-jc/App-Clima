@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
-import useStyles from "../weatherinfo/styles";
+import useStyles from "./styles";
 import { Card, CardContent, Typography } from "@material-ui/core";
 import clouts from "../../assets/images/wb_sunny-24px.svg";
 import { WeatherContext } from "../context/WeatherContext";
 
 const CardDetail = () => {
   const classes = useStyles();
-  
-  const {data} = useContext(WeatherContext)
+
+  const { data } = useContext(WeatherContext);
   const { name, main, weather, wind } = data;
   return (
     <>

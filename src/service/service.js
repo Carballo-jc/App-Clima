@@ -7,11 +7,11 @@ export const getWeather = async (city, country) => {
   const data = await response.json();
   return data;
 };
+
 //funcion que realiza la consulta del pronostico semanals
 export const getTempCity = async (lat, lon) => {
-  const api_city = `${API_WEATHER_DAY}${lat}&lon=${lon}&lang=sp&exclude=hourly&appid=${API_KEY}&units=metric`;
+  const api_city = `${API_WEATHER_DAY}&lat=${lat}&lon=${lon}&lang=sp&exclude=hourly&appid=${API_KEY}&units=metric`;
   const response = await fetch(api_city);
   const data_city = await response.json();
-  console.log(data_city);
-  return data_city.daily;
+  return data_city;
 };
