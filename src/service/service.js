@@ -5,6 +5,7 @@ export const getWeather = async (city, country) => {
   const API_URL = `${API_WEATHER}${city},${country}&lang=sp&exclude=hourly&appid=${API_KEY}&units=metric`;
   const response = await fetch(API_URL);
   const data = await response.json();
+  console.log(data);
   return data;
 };
 
